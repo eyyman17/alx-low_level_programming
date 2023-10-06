@@ -3,7 +3,7 @@
 /**
  * customPrint - Prints a string to the standard output.
  *
- * This function takes an input string 'str' and prints it to the standard output.
+ * main - this function prints a string to the standard output.
  *
  * @str: The input string to be printed.
  */

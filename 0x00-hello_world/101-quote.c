@@ -1,13 +1,11 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * customPrint - Prints a string to the standard output.
  *
- * customPrint: Function that uses putchar to print character by character
+ * This function takes a null-terminated string as input and prints it to the standard output character by character, followed by a newline.
  *
- * str : string
- *
- * Return: Always 0 (Success)
+ * @str: The input string to be printed.
  */
 
 void customPrint(const char *str)

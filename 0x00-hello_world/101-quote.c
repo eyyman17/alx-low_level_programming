@@ -15,7 +15,10 @@ void customPrint(const char *str)
 	while (*str != '\0')
 	{
 		putchar(*str);
+		str++;
 	}
+	putchar('\n');
+
 }
 int main(void)
 {

@@ -3,8 +3,6 @@
 /**
  * customPrint - Prints a string to the standard output.
  *
- * This function takes a null-terminated string as input and prints it to the standard output character by character, followed by a newline.
- *
  * @str: The input string to be printed.
  */
 

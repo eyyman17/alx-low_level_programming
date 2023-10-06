@@ -25,6 +25,6 @@ int main(void)
 {
 	const char *m = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
 
-	customPrint(*m);
+	customPrint(m);
 	return (1);
 }

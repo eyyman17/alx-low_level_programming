@@ -5,7 +5,7 @@
  *
  * Return: Always 0 (Success)
  */
-void custumPrint(const char *str)
+void customPrint(const char *str)
 {
 	while (*str != '\0')
 	{
@@ -15,7 +15,7 @@ void custumPrint(const char *str)
 
 int main(void)
 {
-	const char *message = "and that piece of art is useful" - Dora Korpar, 2015-10-19"
+	const char *message = "and that piece of art is useful\" - Dora Korpar, 2015-10-19"
 	customPrint(message);
 	return 1;
 }

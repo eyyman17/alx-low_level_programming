@@ -5,7 +5,9 @@
 /**
  * main - Entry point
  *
- * Return : returns 0 on success.
+ * Description: positive, negative, or zero
+ *
+ * Return : 0 (Success)
  */
 
 int main(void)

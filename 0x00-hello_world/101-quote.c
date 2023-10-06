@@ -23,8 +23,8 @@ void customPrint(const char *str)
 
 int main(void)
 {
-	const char = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+	const char *m = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
 
-	customPrint;
+	customPrint(*m);
 	return (1);
 }

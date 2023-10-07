@@ -19,7 +19,7 @@ int main(void)
 		}
 		else
 		{
-			hexa = 'a' + i;
+			hexa = 'a' + (i - 10);
 		}
 		putchar(hexa);
 	}

@@ -18,15 +18,18 @@ int main(void)
 	{
 		for (j = 0 ; j < 10 ; j++)
 		{
-			if (i != j && i != k && j !=k && i < j && j < k)
+			for (k=0 ; k<10 ; k++)
 			{
-				putchar(i + '0');
-				putchar(j + '0');
-				putchar(k + '0');
-				if (i + j + k != 24)
+				if (i != j && i != k && j !=k && i < j && j < k)
 				{
-					putchar(',');
-					putchar(' ');
+					putchar(i + '0');
+					putchar(j + '0');
+					putchar(k + '0');
+					if (i + j + k != 24)
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
 			}
 		}

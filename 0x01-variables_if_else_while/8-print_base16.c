@@ -9,10 +9,19 @@
 int main(void)
 {
 	int i;
+	char hexa;
 
 	for (i = '0' ; i < 16 ; i++)
 	{
-		putchar('%x', i);
+		if (i < 10)
+		{
+			hexa = '0' + i;
+		}
+		else
+		{
+			hexa = 'a' + i;
+		}
+		putchar(hexa);
 	}
 	putchar('\n');
 

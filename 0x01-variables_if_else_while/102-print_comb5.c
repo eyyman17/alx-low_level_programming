@@ -16,7 +16,8 @@ int main(void)
 
 	while (i <= 99)
 	{
-		for (j = i ; j <= 99 ; j++)
+		j = i;
+		while (j <= 99)
 		{
 			if (j != i)
 			{
@@ -31,6 +32,7 @@ int main(void)
 					putchar(' ');
 				}
 			}
+			j++;
 		}
 		i++;
 	}

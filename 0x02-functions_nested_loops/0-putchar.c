@@ -5,7 +5,7 @@
  *
  * Description: this code prints -putchar
  *
- * Return : Always 0 when success
+ * Return: Always 0 when success
  */
 
 int main(void)

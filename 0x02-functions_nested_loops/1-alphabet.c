@@ -1,10 +1,8 @@
 #include "main.h"
 
 /**
- * main - check the code
+ * print_alphabet - function that prints alphabets from a to z
  *
- * print_alphabet: function that prints alphabets from a to z
- * 
  * Return: Always 0.
  */
 

@@ -4,8 +4,8 @@
 #include <stdio.h>
 
 
-int_isupper(int c);
-
+int _isupper(int c);
+int _putchar(char c);
 
 
 

@@ -8,17 +8,18 @@
 
 int main(void)
 {
-	int i, x, y, z;
+	long long int i, x, y, z;
 
 	x = 1;
 	y = 2;
 
-	printf("%d, ", x);
-	printf("%d, ", y);
-	for (i = 0; i < 50; i++)
+	printf("%lld, ", x);
+	printf("%lld", y);
+	for (i = 0; i < 48; i++)
 	{
+		printf(", ");
 		z = x + y;
-		printf("%d, ", z);
+		printf("%lld", z);
 		x = y;
 		y = z;
 	}

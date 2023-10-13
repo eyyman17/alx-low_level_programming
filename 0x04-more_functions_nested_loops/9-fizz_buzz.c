@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- * main - entry point.
+ * main - Entry point.
  *
- * Return : 0 when success.
- */
+ * Return: Always 0 (Success)
+ **/
+
 
 int main(void)
 {

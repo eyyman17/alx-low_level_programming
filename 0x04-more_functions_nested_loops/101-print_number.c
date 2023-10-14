@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * main - check the code
+ * print_number - prints an integer
  *
- * Return: Always 0.
+ * @n : takes value of an int.
  */
 
 
@@ -22,7 +22,7 @@ void print_number(int n)
 	}
 	if (m / 10)
 	{
-		print_number(m /10);
+		print_number(m / 10);
 	}
 	_putchar((m % 10) + 48);
 }

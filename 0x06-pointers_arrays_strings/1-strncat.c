@@ -2,11 +2,11 @@
 
 
 /**
- * _strcat - Concatenates two strings.
+ * _strncat - Concatenates two strings.
  *
  * @dest : the first string.
  * @src : the second string.
- *
+ * @n: integer
  * Return: pointer to dest.
  */
 
@@ -16,7 +16,7 @@ char *_strncat(char *dest, char *src, int n)
 
 	for (i = 0; dest[i] != '\0'; i++)
 		;
-	for (j = 0; j <= n ; j++)
+	for (j = 0; j < n ; j++)
 	{
 		dest[i + j] = src[j];
 	}

@@ -4,7 +4,7 @@
  * is_palindrome - checks if a string is a palindrome
  *
  * @s: string
- * @strat: first char of the string
+ * @start: first char of the string
  * @end : last char of the string
  *
  * Return: 1 if true, 0 if false.

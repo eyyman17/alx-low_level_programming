@@ -4,6 +4,8 @@
  * is_palindrome - checks if a string is a palindrome
  *
  * @s: string
+ * @strat: first char of the string
+ * @end : last char of the string
  *
  * Return: 1 if true, 0 if false.
  */
@@ -11,8 +13,10 @@ int pal(char s[], int start, int end);
 
 int is_palindrome(char *s)
 {
-return (pal(s, 0, _strlen_recursion(s)));
+return (pal(s, 0, _strlen_recursion(s) - 1));
 }
+
+
 
 /**
  * pal - checks if a string is a palindrome

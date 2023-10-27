@@ -9,11 +9,11 @@
  * Return: square root of n, -1 when n does not have it.
  */
 
-int sqrt(int n, int m);
+int sqrtfunction(int n, int m);
 
 int _sqrt_recursion(int n)
 {
-	return (sqrt(int n, 1));
+	return (sqrtfunction(int n, 1));
 }
 
 /**
@@ -26,13 +26,13 @@ int _sqrt_recursion(int n)
  */
 
 
-int sqrt(int n, int m)
+int sqrtfunction(int n, int m)
 {
 	if (m * m == n)
 		return (m);
 	else if (m * m < n)
 	{
-		return (sqrt(n, m + 1));
+		return (sqrtfunction(n, m + 1));
 	}
 	else
 		return (-1);

@@ -17,7 +17,7 @@ int _sqrt_recursion(int n)
 }
 
 /**
- * sqrt - Square root of a number
+ * sqrtfunction - Square root of a number
  *
  * @n: input
  * @m: concatenator

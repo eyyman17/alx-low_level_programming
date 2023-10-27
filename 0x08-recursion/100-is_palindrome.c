@@ -7,6 +7,7 @@
  *
  * Return: 1 if true, 0 if false.
  */
+int pal(char s[], int start, int end);
 
 int is_palindrome(char *s)
 {

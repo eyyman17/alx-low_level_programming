@@ -14,11 +14,12 @@ int main(int argc, char *argv[])
 {
 	int i, c, m;
 	int cents[] = {25, 10, 5, 2, 1};
+
 	c = 0;
-	m = atoi(argv[1]);
 
 	if (argc == 2)
 	{
+		m = atoi(argv[1]);
 		if (m < 0)
 			return (printf("0\n"));
 		for (i = 0; i < 5; i++)

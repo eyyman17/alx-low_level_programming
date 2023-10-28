@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 		if (m < 0)
 			return (printf("0\n"));
 		for (i = 0; i < 5; i++)
+		{
 			if (m >= cents[i])
 			{
 				c += m / cents[i];
@@ -31,6 +32,8 @@ int main(int argc, char *argv[])
 					break;
 				}
 			}
+		}
+		print("%d\n", c);
 	}
 	else
 	{

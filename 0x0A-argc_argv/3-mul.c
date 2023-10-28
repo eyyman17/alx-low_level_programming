@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		m = argv[1] * argv[2];
+		m = *argv[1] * *argv[2];
 	}
 	return (0);
 }

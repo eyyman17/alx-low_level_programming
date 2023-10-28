@@ -12,11 +12,10 @@
 
 int main(int argc, char *argv[])
 {
-	int i, c, m, cents;
-
+	int i, c, m;
+	int cents[] = {25, 10, 5, 2, 1};
 	c = 0;
 	m = atoi(argv[1]);
-	cents[] = {25, 10, 5, 2, 1};
 
 	if (argc == 2)
 	{
@@ -27,7 +26,7 @@ int main(int argc, char *argv[])
 			{
 				c += m / cents[i];
 				m = m % cents[i];
-				if (money % cents[i] == 0)
+				if (m % cents[i] == 0)
 				{
 					break;
 				}

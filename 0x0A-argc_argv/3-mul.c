@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		m = *argv[1] * *argv[2];
+		print("%d", m);
 	}
 	return (0);
 }

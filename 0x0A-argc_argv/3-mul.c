@@ -16,13 +16,13 @@ int main(int argc, char *argv[])
 
 	if (argc < 3 || argc > 3)
 	{
-		printf("Error");
+		printf("Error\n");
 		return (1);
 	}
 	else
 	{
-		m = *argv[1] * *argv[2];
-		print("%d", m);
+		m = atoi(argv[1]) * atoi(argv[2]);
+		print("%d\n", m);
 	}
 	return (0);
 }

@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		m = atoi(argv[1]) * atoi(argv[2]);
-		print("%d\n", m);
+		printf("%d\n", m);
 	}
 	return (0);
 }

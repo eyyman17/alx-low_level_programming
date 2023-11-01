@@ -12,8 +12,8 @@
 char *_strdup(char *str)
 {
 	int i;
-	int len;
-	char *strcpy;
+	int len = 1;
+	char strcpy;
 
 	if (str == NULL)
 		return (NULL);
@@ -23,6 +23,6 @@ char *_strdup(char *str)
 	if (strcpy == NULL)
 		return (NULL);
 	for (i = 0; i < len; i++)
-		strcpy[i] = str[i];
+		*strcpy[i] = str[i];
 	return (strcpy);
 }

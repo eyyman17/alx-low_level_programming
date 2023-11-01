@@ -10,7 +10,7 @@
  * Return: NULL on failure, or if width or height are negative.
  */
 
-int **alloc_grid(int width, int height)
+char **alloc_grid(int width, int height)
 {
 	char *g;
 	int i, j;
@@ -27,9 +27,10 @@ int **alloc_grid(int width, int height)
 	{
 		for (j = 0; j < width; j++)
 		{
-			g[j] = "0 ";
+			g[j] = '0 ';
 		}
 		g[j] = '\n';
 	}
 
 	return (g);
+}

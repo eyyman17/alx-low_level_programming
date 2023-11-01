@@ -10,10 +10,10 @@
  * Return: NULL on failure, or if width or height are negative.
  */
 
-char **alloc_grid(int width, int height)
+int **alloc_grid(int width, int height)
 {
 	char *g;
-	int i, j;
+	int i, j, p;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
@@ -32,5 +32,7 @@ char **alloc_grid(int width, int height)
 		g[j] = '\n';
 	}
 
-	return (g);
+	p = atoi(&g);
+
+	return (p);
 }

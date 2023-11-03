@@ -29,14 +29,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	for (i = 0; i < len1; i++)
 		concat[i] = s1[i];
-	m = 0;
-	for (j = 0; (j < len2) && (m < n); j++)
+
+	for (j = 0, m = 0; (j < len2) && (m < n); j++, m++)
 	{
 		concat[len1] = s2[j];
 		len1++;
-		m++;
 	}
-	concat[j] = '\0';
+	concat[len1] = '\0';
 
 
 	return (concat);

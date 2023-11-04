@@ -13,14 +13,12 @@ char **strtow(char *str)
 	char **w;
 	int i, j, k, str_len, word_count, word_len;
 
-
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 
 	str_len = 0;
 	while (str[str_len] != '\0')
-		len++;
-
+		str_len++;
 	w = malloc((str_len + 1) * sizeof(char));
 	if (w == NULL)
 		return (NULL);
@@ -31,7 +29,7 @@ char **strtow(char *str)
 		if (str[i] != ' ')
 		{
 			word_len = 0;
-			while ( str[i + word_len] != ' ' && str[i + word_len] != '\0')
+			while (str[i + word_len] != ' ' && str[i + word_len] != '\0')
 				word_len++;
 
 			w[word_count] = malloc((word_len + 1) * sizeof(char));
@@ -49,8 +47,6 @@ char **strtow(char *str)
 			i += word_len;
 		}
 	}
-
 	w[word_count] = NULL;
-
 	return (w);
 }

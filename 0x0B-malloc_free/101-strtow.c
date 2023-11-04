@@ -35,6 +35,7 @@ char **strtow(char *str)
 		return (NULL);
 
 	str_len = 0;
+	i = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] != ' ')

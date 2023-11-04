@@ -16,9 +16,12 @@ char **strtow(char *str)
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
+
 	str_len = 0;
 	while (str[str_len] != '\0')
 		str_len++;
+
+	has_no_space_char = 0;
 	for (check = 0; check < str_len; check++)
 		if (str[check] != ' ')
 		{
@@ -27,9 +30,11 @@ char **strtow(char *str)
 		}
 	if (!has_non_space_char)
 		return (NULL);
+
 	w = malloc((str_len + 1) * sizeof(char *));
 	if (w == NULL)
 		return (NULL);
+
 	word_count = 0;
 	for (i = 0; i < str_len; i++)
 	{

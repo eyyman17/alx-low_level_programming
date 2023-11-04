@@ -35,8 +35,16 @@ char **strtow(char *str)
 		return (NULL);
 
 	str_len = 0;
-	while (str[str_len] != '\0')
-		str_len++;
+	while (str[i] != '\0')
+	{
+		if (str[i] != ' ')
+		{
+			str_len++;
+			i++;
+		}
+		else
+			i++;
+	}
 
 	w = malloc((str_len + 1) * sizeof(char *));
 	if (w == NULL)

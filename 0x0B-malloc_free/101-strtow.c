@@ -1,21 +1,29 @@
 #include "main.h"
 
 /**
- * has_non_space_char - checks if str has words in it.
+ * word_count - count words in str.
  * @str: string.
  *
  * Return: 1 When success, 0 when fails.
  **/
 
-int has_non_space_char(char *str)
+int word_count(char *str)
 {
-	while (*str)
+	int i, c;
+
+	c = 0;
+	for (i = 0; s[i]; i++)
 	{
-		if (*str != ' ')
-			return (1);
-		str++;
+		if (s[i] == ' ')
+		{
+			if (s[i + 1] != ' ' && s[i + 1] != '\0')
+				c++;
+		}
+		else if (i == 0)
+			c++;
 	}
-	return (0);
+	c++;
+	return (c);
 }
 
 /**
@@ -25,56 +33,45 @@ int has_non_space_char(char *str)
  *
  * Return: NULL when fails.
  */
-
 char **strtow(char *str)
 {
 	char **w;
-	int i, j, k, str_len, word_count, word_len;
+	int i, j, k = 0, t, c, count = 0;
 
-	if (str == NULL || str[0] == '\0' || !has_non_space_char(str))
+	if (str == NULL || *str == '\0')
 		return (NULL);
-
-	str_len = 0;
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] != ' ')
-		{
-			str_len++;
-			i++;
-		}
-		else
-			i++;
-	}
-
-	w = malloc((str_len + 1) * sizeof(char *));
+	c = word_count(str);
+	if (c == 1)
+		return (NULL);
+	w = malloc(c * sizeof(char *));
 	if (w == NULL)
 		return (NULL);
-
-	word_count = 0;
-	for (i = 0; i < str_len; i++)
+	w[c - 1] = NULL;
+	while (str[k])
 	{
-		if (str[i] != ' ')
+		if (str[k] != ' ' && (k == 0 || str[k - 1] == ' '))
 		{
-			word_len = 0;
-			while (str[i + word_len] != ' ' && str[i + word_len] != '\0')
-				word_len++;
-
-			w[word_count] = malloc((word_len + 1) * sizeof(char));
-			if (w[word_count] == NULL)
+			for (j = 1; str[k + j] != ' ' && str[k + j]; j++)
+				;
+			j++;
+			w[count] = malloc(j * sizeof(char));
+			j--;
+			if (w[count] == NULL)
 			{
-				for (j = 0; j < word_count; j++)
-					free(w[j]);
+				for (t = 0; t < count; t++)
+					free(w[t]);
+				free(w[c - 1]);
 				free(w);
 				return (NULL);
 			}
-			for (k = 0; k < word_len; k++)
-				w[word_count][k] = str[i + k];
-			w[word_count][word_len] = '\0';
-			word_count++;
-			i += word_len;
+			for (i = 0; i < j; i++)
+				w[count][i] = str[k + i];
+			w[count][i] = '\0';
+			count++;
+			k += j;
 		}
+		else
+			k++;
 	}
-	w[word_count] = NULL;
 	return (w);
 }

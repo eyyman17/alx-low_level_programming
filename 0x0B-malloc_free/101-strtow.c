@@ -1,6 +1,24 @@
 #include "main.h"
 
 /**
+ * has_non_space_char - checks if str has words in it.
+ * @str: string.
+ *
+ * Return: 1 When success, 0 when fails.
+ **/
+
+int has_non_space_char(char *str)
+{
+	while (*str)
+	{
+		if (*str != ' ')
+			return (1);
+		str++;
+	}
+	return (0);
+}
+
+/**
  * strtow - splits string into words
  *
  * @str: string.
@@ -11,25 +29,14 @@
 char **strtow(char *str)
 {
 	char **w;
-	int check, has_non_space_char; 
 	int i, j, k, str_len, word_count, word_len;
 
-	if (str == NULL || str[0] == '\0')
+	if (str == NULL || str[0] == '\0' || !has_non_space_char(str))
 		return (NULL);
 
 	str_len = 0;
 	while (str[str_len] != '\0')
 		str_len++;
-
-	has_non_space_char = 0;
-	for (check = 0; check < str_len; check++)
-		if (str[check] != ' ')
-		{
-			has_non_space_char = 1;
-			break;
-		}
-	if (!has_non_space_char)
-		return (NULL);
 
 	w = malloc((str_len + 1) * sizeof(char *));
 	if (w == NULL)

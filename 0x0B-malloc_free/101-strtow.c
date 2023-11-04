@@ -11,32 +11,46 @@
 char **strtow(char *str)
 {
 	char **w;
-	int i, j, len;
+	int i, j, k, str_len, word_count, word_len;
 
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 
-	len = 0;
-	while (str[len] != '\0')
+	str_len = 0;
+	while (str[str_len] != '\0')
 		len++;
 
-	w = malloc((len + 1) * sizeof(char));
+	w = malloc((str_len + 1) * sizeof(char));
 	if (w == NULL)
 		return (NULL);
 
-	j = 0;
-	for (i = 0; i < len; i++)
+	word_count = 0;
+	for (i = 0; i < str_len; i++)
 	{
 		if (str[i] != ' ')
 		{
-			w[j][0] = str[i];
-			w[j][1] = '\0';
-			j++;
+			word_len = 0;
+			while ( str[i + word_len] != ' ' && str[i + word_len] != '\0')
+				word_len++;
+
+			w[word_count] = malloc((word_len + 1) * sizeof(char));
+			if (w[word_count] == NULL)
+			{
+				for (j = 0; j < word_count; k++)
+					free(w[j]);
+				free(w);
+				return (NULL);
+			}
+			for (k = 0; k < word_len; k++)
+				w[word_count][k] = str[i + k];
+			w[word_count][word_len] = '\0';
+			word_count++;
+			i += word_len;
 		}
 	}
 
-	w[j] = NULL;
+	w[word_count] = NULL;
 
 	return (w);
 }

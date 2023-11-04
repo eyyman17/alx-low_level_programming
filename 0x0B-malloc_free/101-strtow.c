@@ -11,7 +11,7 @@
 char **strtow(char *str)
 {
 	char **w;
-	int check, has_no_space_char; 
+	int check, has_non_space_char; 
 	int i, j, k, str_len, word_count, word_len;
 
 	if (str == NULL || str[0] == '\0')
@@ -21,7 +21,7 @@ char **strtow(char *str)
 	while (str[str_len] != '\0')
 		str_len++;
 
-	has_no_space_char = 0;
+	has_non_space_char = 0;
 	for (check = 0; check < str_len; check++)
 		if (str[check] != ' ')
 		{

@@ -3,7 +3,7 @@
 
 #define ABS(x) x
 
-int main()
+int main(void)
 {
 #if ABS(x) < 0
 	x = (-x)

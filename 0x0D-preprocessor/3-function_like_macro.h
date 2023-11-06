@@ -3,8 +3,11 @@
 
 #define ABS(x) x
 
-#if (x < 0)
-x = (-x)
+int main()
+{
+#if ABS(x) < 0
+	x = (-x)
 #endif
+}
 
 #endif

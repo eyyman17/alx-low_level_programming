@@ -21,12 +21,12 @@ int int_index(int *array, int size, int (*cmp)(int))
 		for (i = 0; i < size; i++)
 		{
 			r = cmp(array[i]);
-			if ( r != 0)
+			if (r != 0)
 				return (i);
 		}
 		if (r == 0)
 			return (-1);
 	}
 
-	return (0);
+	return (-1);
 }

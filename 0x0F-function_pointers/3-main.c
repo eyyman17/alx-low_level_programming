@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		b = atoi(argv[3]);
 		op_func = get_op_func(argv[2]);
 		if (!op_func)
-			print("Error\n");
+			printf("Error\n");
 		if (!b && (argv[2][0] == '/' || argv[2][0] == '%'))
 			printf("Error\n");
 

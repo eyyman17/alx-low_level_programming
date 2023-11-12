@@ -13,10 +13,8 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	char c;
 	int i, j = 0;
-	float f;
-	char *s, *sep = "";
+	char *s, *sep = "", c;
 
 	va_start(args, format);
 	if (format)
@@ -34,8 +32,7 @@ void print_all(const char * const format, ...)
 				printf("%s%d", sep, i);
 				break;
 			case 'f':
-				f = va_arg(args, double);
-				printf("%s%f", sep, f);
+				printf("%s%f", sep, va_arg(args, double));
 				break;
 			case 's':
 				s = va_arg(args, char *);
@@ -52,6 +49,6 @@ void print_all(const char * const format, ...)
 		j++;
 		}
 	}
-	va_end(args);
 	printf("\n");
+	va_end(args);
 }

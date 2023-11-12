@@ -19,9 +19,11 @@ void print_all(const char * const format, ...)
 	char *s, *sep = "";
 
 	va_start(args, format);
-	while (format)
+	if (format)
 	{
-		switch (format[j])
+		while (format[j])
+		{
+			switch (format[j])
 		{
 			case 'c':
 				c = va_arg(args, int);
@@ -48,6 +50,7 @@ void print_all(const char * const format, ...)
 		}
 		sep = ", ";
 		j++;
+		}
 	}
 	va_end(args);
 	printf("\n");

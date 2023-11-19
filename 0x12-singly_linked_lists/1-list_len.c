@@ -10,12 +10,13 @@
 
 size_t list_len(const list_t *h)
 {
-	const list_t *current;
+	const list_t *current = h;
 	int i = 0;
 
 	while (current != NULL)
+	{
 		current = current->next;
 		i++;
-
+	}
 	return (i);
 }

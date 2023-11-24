@@ -24,7 +24,7 @@ unsigned int binary_to_uint(const char *b)
 
 	for (i = len - 1; i >= 0; i--)
 	{
-		sum += b[i] * (2 ** (len - 1));
+		sum += b[i] * (2 ^ (len - 1));
 	}
 
 	return (sum);

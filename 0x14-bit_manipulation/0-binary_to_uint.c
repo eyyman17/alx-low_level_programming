@@ -42,7 +42,7 @@ unsigned int binary_to_uint(const char *b)
 
 	for (i = 0; b[i] != '\0' ; i++)
 	{
-		dec += power(2, len - i);
+		dec += power(2, len - 1 - i);
 	}
 
 	return (dec);

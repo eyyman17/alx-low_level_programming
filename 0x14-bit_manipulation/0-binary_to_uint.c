@@ -43,9 +43,9 @@ unsigned int binary_to_uint(const char *b)
 		len++;
 	}
 
-	for (i = len - 1; i > 0; i--)
+	for (i = 0; i < (len - 1); i++)
 	{
-		sum += b[i] * power(2, (len - i - 1));
+		sum += b[i] * power(2, (len - 1) - i);
 	}
 
 	return (sum);

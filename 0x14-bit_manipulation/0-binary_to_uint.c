@@ -1,23 +1,19 @@
 #include "main.h"
 
 /**
- * power - exponentiation
- *
- * @base: the base
- * @exponent: the exponent
- *
- * Return: result
- **/
-
-int power(int base, int exponent)
+ * power - return power of a number.
+ * @a : Int.
+ * @b : Int.
+ * Return: Power of a number;
+ */
+unsigned int power(int a, int b)
 {
-	int result = 1;
-
-	while (exponent > 0)
-	{
-		result *= base;
-		exponent--;
-	}
+	int result = 1, i;
+	
+	if (b == 0)
+		return (1);
+	for (i = 0; i < b; i++)
+		result = result * a;
 	return (result);
 }
 
@@ -31,22 +27,23 @@ int power(int base, int exponent)
 
 unsigned int binary_to_uint(const char *b)
 {
-	int i, len = 0, sum = 0;
+	int i, len = 0;
+	unsigned int dec = 0;
 
 	if (b == NULL)
 		return (0);
 
 	while (b[len] != '\0')
 	{
-		if (b[len] != 0 && b[len] != 1)
+		if (b[len] != '0' && b[len] != '1')
 			return (0);
 		len++;
 	}
 
-	for (i = 0; i < (len - 1); i++)
+	for (i = 0; b[i] != '\0' ; i++)
 	{
-		sum += b[i] * power(2, (len - 1) - i);
+		dec += power(2, len - i);
 	}
 
-	return (sum);
+	return (dec);
 }

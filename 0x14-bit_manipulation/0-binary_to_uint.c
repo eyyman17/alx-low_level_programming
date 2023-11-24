@@ -9,7 +9,7 @@
 unsigned int power(int a, int b)
 {
 	int result = 1, i;
-	
+
 	if (b == 0)
 		return (1);
 	for (i = 0; i < b; i++)
@@ -42,7 +42,7 @@ unsigned int binary_to_uint(const char *b)
 
 	for (i = 0; b[i] != '\0' ; i++)
 	{
-		dec += power(2, len - 1 - i);
+		dec += (b[i] - '0') * power(2, len - 1 - i);
 	}
 
 	return (dec);

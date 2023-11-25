@@ -17,7 +17,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	ex = n ^ m;
 
-	for (i = 63; a >=0; a--)
+	for (i = 63; i >=0; i--)
 	{
 		current = ex >> i;
 		if (current & 1)

@@ -10,19 +10,25 @@
 
 void print_binary(unsigned long int n)
 {
-	int num, i;
+	int num, i = 0, j;
+	char buffer[64];
 
 	num = n;
 
+	if (num == 0)
+	{
+		_putchar('0');
+		return;
+	}
+
 	while (num != 0 && num != 1)
 	{
-		_putchar((num % 2) - '0');
-		i++;
-		num = num >> 2;
+		buffer[i++] = (num % 2) + '0';
+		num = num >> 1;
 	}
-	i++;
-	if (num == 1)
-		_putchar('1');
-	if (num == 0)
-		_putchar('0');
+
+	buffer[i++] = (num == 1) ? '1' : '0';
+
+	for (j = i - 1; j >= 0; j--)
+		_putchar(buffer[j]);
 }

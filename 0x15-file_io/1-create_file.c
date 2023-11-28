@@ -13,6 +13,9 @@ int create_file(const char *filename, char *text_content)
 {
 	mode_t mode = S_IRUSR | S_IWUSR;
 	int file_d;
+	ssize_t write_check;
+	int len = 0;
+
 
 	if (filename == NULL)
 		return (-1);
@@ -21,7 +24,15 @@ int create_file(const char *filename, char *text_content)
 	if (file_d == -1)
 		return (-1);
 
-	write(file_d, text_content, sizeof(text_content));
+	while (text_content[len] != '\0')
+		len++;
+
+	write_check = write(file_d, text_content, len);
+	if (write_check == -1)
+	{
+		close(file_d);
+		return (-1);
+	}
 
 	close(file_d);
 

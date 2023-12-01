@@ -1,16 +1,16 @@
 #include "main.h"
 
 /*
- * cp_file - Copies the content of a file to another file
+ * Main - Copies the content of a file to another file
  *
  * argc: argument count
  * argv: argument vectors
  *
- * Return: Nothing.
+ * Return: 0 on success.
  **/
 
 
-void cp_file(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int file_d1, file_d2;
 	char buffer[1024];
@@ -69,4 +69,5 @@ void cp_file(int argc, char *argv[])
 		dprintf(2, "Error: Can't close fd %d\n", file_d2);
 		exit(100);
 	}
+	return (0);
 }

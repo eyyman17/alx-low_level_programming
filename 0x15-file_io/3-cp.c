@@ -1,10 +1,10 @@
 #include "main.h"
 
-/*
- * Main - Copies the content of a file to another file
+/**
+ * main - copies the content of a file to another file
  *
- * argc: argument count
- * argv: argument vectors
+ * @argc: argument count
+ * @argv: argument vectors
  *
  * Return: 0 on success.
  **/

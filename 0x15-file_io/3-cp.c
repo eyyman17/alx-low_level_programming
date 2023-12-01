@@ -39,12 +39,6 @@ void cp_file(int argc, char *argv[])
 		exit(99);
 	}
 
-	if (ftruncate(file_d2, 0) == -1)
-	{
-		close(file_d2);
-		dprintf(2, "Error: Can't write to %s\n", file_to);
-		exit(99);
-	}
 	while ((bytesRead = read(file_d1, buffer, sizeof(buffer))) > 0)
 	{
 		if (write(file_d2, buffer, bytesRead) == -1)

@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		dprintf(2, "Usage: cp file_from file_to\n"), exit(97);
 
 	file_d1 = open(file_from, O_RDONLY);
-	if (file_from == NULL || file_d1 == -1)
+	if (file_d1 == -1)
 		dprintf(1, "Error: Can't read from file %s\n", file_from), exit(98);
 
 	file_d2 = open(file_to, O_WRONLY | O_CREAT, mode);
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	while ((bytesRead = read(file_d1, buffer, sizeof(buffer))) > 0)
 		if (write(file_d2, buffer, bytesRead) == -1)
 			dprintf(2, "Error: Can't write to %s\n", file_to), exit(99);
-        if (bytesRead == -1)
+	if (bytesRead == -1)
 		dprintf(2, "Error: Can't read from file %s\n", file_from), exit(98);
 
 	if (close(file_d1) == -1)

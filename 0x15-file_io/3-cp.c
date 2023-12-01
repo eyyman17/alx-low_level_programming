@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 		dprintf(2, "Usage: cp file_from file_to\n"), exit(97);
 
-	file_d1 = open(agrv[1], O_RDONLY);
+	file_d1 = open(argv[1], O_RDONLY);
 	if (argv[1] == NULL || file_d1 == -1)
 		dprintf(2, "Error: Can't read from file %s\n", file_from), exit(98);
 

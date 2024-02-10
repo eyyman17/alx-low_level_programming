@@ -22,14 +22,14 @@ void hash_table_print(const hash_table_t *ht)
 		if (ht->array[i] != NULL)
 		{
 			if (printed == 1)
-				print(", ");
+				printf(", ");
 			node = ht->array[i];
 			while (node != NULL)
 			{
 				printf("'%s': '%s'", node->key, node->value);
 				node = node->next;
 				if (node != NULL)
-					print(", ");
+					printf(", ");
 			}
 			printed = 1;
 		}

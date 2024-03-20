@@ -10,4 +10,4 @@ $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 %.o: %.c
-	$(CC) -c $(SRC)
+	$(CC) -c $< -o $@
